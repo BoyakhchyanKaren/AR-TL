@@ -29,13 +29,18 @@ function Modal({article}) {
     } else {
         document.body.classList.remove('active-modal')
     };
-    const editableText = article.edited ? dataTypes.updated_at : dataTypes.created_at;
-    const editableTime = article.edited ? article.updated_at.slice(0, 19) : article.created_at.slice(0, 19);
-    const [data, setData] = useState(editableText);
-    const [time, setTime] = useState(editableTime);
+    let text;
+    let date;
+    const [edit, setEdit] = useState("");
+    const [time, setTime] = useState("");
+    useEffect( ( ) => {
+        text = article.edited ? dataTypes.updated_at : dataTypes.created_at;
+        date = article.edited ? article.updated_at.slice(0, 19) : article.created_at.slice(0, 19);
+        setEdit(text);
+        setTime(date);
+    }, [article]);
+
     let handleEditable = () => {
-        setData(editableText);
-        setTime(editableTime);
         window.location.reload();
     };
     return (
@@ -50,7 +55,7 @@ function Modal({article}) {
                     </div>
                     <div className="modal-content">
                         <h2>{article.heading}</h2>
-                        <span>{data} {time}</span>
+                        <span>{edit} {time}</span>
                         <textarea
                             value={context}
                             className="text-area"
