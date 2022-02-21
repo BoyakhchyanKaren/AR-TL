@@ -1,0 +1,10 @@
+.logo{
+    background-position: center;
+    background-size: cover;
+    overflow-x: hidden;
+    height: 100px;
+    width: 100px;
+    margin-left: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+}

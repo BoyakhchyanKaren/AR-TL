@@ -1,0 +1,19 @@
+version: '3.9'
+services:
+  web:
+    build: .
+    volumes:
+      - ./:/app
+    ports:
+      - '8822:8822'
+    container_name: server-app
+    depends_on:
+      - db
+  db:
+    image: postgres
+    container_name: db-app
+    volumes:
+      - ./articles:/var/lib/postgresql/data
+    env_file: ./.env
+    ports:
+      - '5427:5432'

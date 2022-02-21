@@ -1,0 +1,71 @@
+body.active-modal {
+    overflow: scroll;
+}
+.modal, .overlay {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+}
+.modal {
+    z-index: 1;
+}
+.overlay {
+    background: rgba(49,49,49,0.8);
+}
+.modal-content {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #f1f1f1;
+    padding: 14px 28px;
+    border-radius: 5px;
+    width: 500px;
+    height: 400px;
+    overflow-y: scroll;
+
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+}
+.modal-content::-webkit-scrollbar{
+    display: none;
+}
+.btn-modal {
+    border-radius: 5px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    width: 90px;
+    background-color: #c2c2c2;
+}
+.btn {
+    border-radius: 5px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    width: 60px;
+    color: white;
+}
+.close-modal {
+    background-color: #034b67;
+}
+.edit-modal {
+    background-color: #0b2831;
+}
+.text-area {
+    border: 1px solid #5d5d5d;
+    width: 400px;
+    height: 150px;
+    max-width: 480px;
+    min-width: 400px;
+    max-height: 200px;
+    min-height: 150px;
+}
+.btn-container {
+    display: flex;
+    gap: 40px;
+}
