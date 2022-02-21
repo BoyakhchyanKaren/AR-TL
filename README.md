@@ -1,5 +1,5 @@
 # React App => yarn start
-# Node App => docker compose upp
+# Node App => docker compose up
 
 
 
